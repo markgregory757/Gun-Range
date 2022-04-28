@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema
-const review = require('./Reviews')
+const review = require('./Review')
 
 const rangeSchema = new mongoose.Schema({
   name: String,
