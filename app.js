@@ -8,6 +8,13 @@ const logger = require('morgan')
 const path = require('path');
 const hbs = require('hbs')
 const mongoose = require('mongoose');
+
+// routes
+const indexRouter = require('./routes/index')
+
+const app = express();
+
+
 // const Person = require('./models/Person');
 
 
@@ -21,4 +28,5 @@ mongoose.connect(process.env.DB_URI, {
   })
   .then(res => console.log("db connected"))
   .catch(err => console.log(err))
+
 
