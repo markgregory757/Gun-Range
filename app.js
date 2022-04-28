@@ -37,7 +37,7 @@ personSchema.methods.shoot = function shoot() {
 
 const Person = mongoose.model("Person", personSchema)
 
-const shooter = new Person({name : "Billie"})
+const shooter = new Person({name : "The Kid"})
 
 shooter.shoot()
 
