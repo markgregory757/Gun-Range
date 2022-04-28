@@ -22,25 +22,3 @@ mongoose.connect(process.env.DB_URI, {
   .then(res => console.log("db connected"))
   .catch(err => console.log(err))
 
-
-   const personSchema = new mongoose.Schema({
-    name: String
-})
-
-personSchema.methods.shoot = function shoot() {
-    const fire = this.name
-    ? "At noon " + this.name + " will dule."
-    : "No dule"
-
-    console.log(fire)
-}
-
-const Person = mongoose.model("Person", personSchema)
-
-const shooter = new Person({name : "The Kid"})
-
-shooter.shoot()
-
-console.log("My names: ", shooter)
-
-shooter.save().then(() => console.log("Bang!"));
