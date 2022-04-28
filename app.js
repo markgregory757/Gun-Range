@@ -30,19 +30,3 @@ mongoose.connect(process.env.DB_URI, {
   .catch(err => console.log(err))
 
 
-  const personSchema = new mongoose.Schema({
-    name: String
-})
-
-
-//view engine setup
-
-app.set('views', path.join(__dirname, 'views'))
-app.set("view engine", "hbs");
-
-
-
-
-app.use('/', indexRouter);
-
-module.exports = app;
