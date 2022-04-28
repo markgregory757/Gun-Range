@@ -23,7 +23,7 @@ mongoose.connect(process.env.DB_URI, {
   .catch(err => console.log(err))
 
 
-   const personSchema = new mongoose.Schema({
+  const personSchema = new mongoose.Schema({
     name: String
 })
 
