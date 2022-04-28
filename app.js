@@ -1,48 +1,74 @@
-const { mainModule } = require('process');
-require('dotenv').config();
-const createError = require('http-errors');
-const express = require('express');
-const session = require('express-session');
-const cookieParser = require('cookie-parser')
-const logger = require('morgan')
-const path = require('path');
-const hbs = require('hbs')
-const mongoose = require('mongoose');
+// const { mainModule } = require("process");
+require("dotenv").config();
+const createError = require("http-errors");
+const express = require("express");
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const path = require("path");
+const hbs = require("hbs");
+const mongoose = require("mongoose");
+const bcrypt = require('bcrypt');
+const saltRounds = +process.env.SALT; 
+// const Person = require("./models/Person");
 
-// routes
-const indexRouter = require('./routes/index')
+// ROUTES
+
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/createUser");
+const rangeRouter = require("./routes/addRange");
+const skillsRouter = require("./routes/skills");
+const blogRouter = require("./routes/blogs");
+const { appendFile } = require("fs");
 
 const app = express();
 
-
-// const Person = require('./models/Person');
-
-
-
-mongoose.connect(process.env.DB_URI, {
-    dbName: process.env.DB_NAME, 
+mongoose
+  .connect(process.env.DB_URI, {
+    dbName: process.env.DB_NAME,
     user: process.env.DB_USER,
     pass: process.env.DB_PASS,
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   })
-  .then(res => console.log("db connected"))
-  .catch(err => console.log(err))
+  .then((res) => console.log("db connected"))
+  .catch((err) => console.log(err));
 
-
-  const personSchema = new mongoose.Schema({
-    name: String
-})
-
-
-//view engine setup
-
-app.set('views', path.join(__dirname, 'views'))
+hbs.registerPartials(path.join(__dirname, "/views/partials"), (err) => {});
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
-
-
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(
+  session({
+    secret: "secret",
+    httpOnly: true,
+    secure: true,
+    resave: true,
+    saveUnitialized: true
+  }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/createUser', usersRouter);
+app.use('/partials/skills', skillsRouter);
+app.use('/addRange', rangeRouter);
+app.use('/blogs', blogRouter);
 
-module.exports = app;
+
+app.use(function(req, res, next) {
+    next(createError(404))
+})
+
+app.use(function(err, req, res, next) {
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+    res.status(err.status || 500);
+    res.render('error');
+})
+
+module.exports = app
