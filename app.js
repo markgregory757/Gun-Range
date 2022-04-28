@@ -8,9 +8,17 @@ const logger = require('morgan')
 const path = require('path');
 const hbs = require('hbs')
 const mongoose = require('mongoose');
-// const Person = require('./models/Person');
+const Person = require('./models/Person');
 
+// ROUTES
 
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const rangeRouter = require('./routes/range');
+const createRouter = require('./routes/create');
+const skills = require('./routes/skills');
+const blogRouter = require('./routes/blogs');
+const { appendFile } = require('fs');
 
 mongoose.connect(process.env.DB_URI, {
     dbName: process.env.DB_NAME, 
@@ -22,3 +30,13 @@ mongoose.connect(process.env.DB_URI, {
   .then(res => console.log("db connected"))
   .catch(err => console.log(err))
 
+hbs.registerPartials(path.join(__dirname, '/views/partials'), (err) => {});
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'hbs');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false}));
+app.use(cookieParser());
+app.use(session({ secret: 'secret',
+                    }))
