@@ -8,6 +8,13 @@ const logger = require('morgan')
 const path = require('path');
 const hbs = require('hbs')
 const mongoose = require('mongoose');
+
+// routes
+const indexRouter = require('./routes/index')
+
+const app = express();
+
+
 // const Person = require('./models/Person');
 
 
@@ -27,20 +34,15 @@ mongoose.connect(process.env.DB_URI, {
     name: String
 })
 
-personSchema.methods.shoot = function shoot() {
-    const fire = this.name
-    ? "At noon " + this.name + " will dule."
-    : "No dule"
 
-    console.log(fire)
-}
+//view engine setup
 
-const Person = mongoose.model("Person", personSchema)
+app.set('views', path.join(__dirname, 'views'))
+app.set("view engine", "hbs");
 
-const shooter = new Person({name : "The Kid"})
 
-shooter.shoot()
 
-console.log("My names: ", shooter)
 
-shooter.save().then(() => console.log("Bang!"));
+app.use('/', indexRouter);
+
+module.exports = app;
