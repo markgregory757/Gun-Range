@@ -10,14 +10,29 @@
 <!-- body -->
 <body>
   <h1><a href="/">Hello Users</a></h1>
-    <header>
-      <ul>
-        <li><a href="/createUser">Register</a></li>
-        <li><a href="/addRange">New Range</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/logout">Logout</a></li>
-      </ul>
-    </header>
-
+  <header>
+    <ul>
+      {{!-- <li><a href="/createUser">Register</a></li> --}}
+      <li><a href="/addRange">New Range</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </header>
+  <div class="form">
+    <form action="/createUser" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="{{person.name}}">
+      <label for="password">Password:</label>
+      <input type="password" id="pasword" name="password" value="{{person.password}}">
+      <br>
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="age" value="{{person.age}}"></textarea>
+      <label for="image">Profile Image:</label>
+      <input type="text" id="image" name="imageURL" value="{{person.image_url}}">
+      <br>
+      <label for="abilities">Abilities:</label>
+      <textarea id="abilities" name="abilities" value="{{range.abilities}}"></textarea>
+    </form>
+  </div>
 </body>
 </html>
