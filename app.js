@@ -10,12 +10,13 @@ const hbs = require("hbs");
 const mongoose = require("mongoose");
 const bcrypt = require('bcrypt');
 const saltRounds = +process.env.SALT; 
-const Person = require("./models/Person");
+
 
 // ROUTES
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/createUser");
+const loginRouter = require("./routes/login");
 const rangeRouter = require("./routes/addRange");
 const skillsRouter = require("./routes/skills");
 const blogRouter = require("./routes/blogs");
@@ -42,18 +43,19 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(
-  session({
-    secret: "secret",
-    httpOnly: true,
-    secure: true,
-    resave: true,
-    saveUnitialized: true
-  }));
+// app.use(
+//   session({
+//     secret: "secret",
+//     httpOnly: true,
+//     secure: true,
+//     resave: true,
+//     saveUnitialized: true
+//   }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/createUser', usersRouter);
+app.use('/login', loginRouter);
 app.use('/partials/skills', skillsRouter);
 app.use('/addRange', rangeRouter);
 app.use('/blogs', blogRouter);
