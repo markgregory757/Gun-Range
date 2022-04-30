@@ -10,7 +10,12 @@ height: 100%;
 font-family: 'Numans', sans-serif;
 }
 
-.container{
+header ul li {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+container{
 height: 100%;
 
 align-content: center;
