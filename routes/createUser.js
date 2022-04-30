@@ -6,21 +6,33 @@ const Person = require("../models/Person");
 const createUser = require("../views/createUser");
 const jwt = require("jsonwebtoken");
 const secretKey = process.env.SECRET;
+const existingUsers = []
+
 
 router.get("/", async (req, res) => {
   res.render("createUser");
-  console.log(await Person.find({}));
+  userCheck = await Person.find({})
+  userCheck.forEach(user => {
+    existingUsers.push(user.name) 
+  });
 });
 
+
 router.post("/", async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { name, password, age, image, abilities } = req.body;
-  console.log(name, password, age, image, abilities);
+  // console.log(name, password, age, image, abilities);
 
   //If no password check
   if (password == false) {
     //   res.send("Please enter a password");
     res.redirect("/");
+  
+  } else if (existingUsers.includes(name)) {
+    // Check username is not already in use
+    res.send("User already exists")
+    console.log("User already exists")
+
   } else {
     // Register a new user
     //   res.send("POST registered a new user");

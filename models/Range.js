@@ -11,7 +11,7 @@ const rangeSchema = new mongoose.Schema({
     state: String,
     zip: Number
   },
-  image_url: String,
+  image_url: [],
   lanes:{
     indoor: {
       number: Number,

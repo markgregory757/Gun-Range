@@ -14,9 +14,9 @@ const commentSchema = new mongoose.Schema({
     type: Schema.Types.ObjectId, 
     ref:'Person'
   }],
-  range: [{ 
+  review: [{ 
     type: Schema.Types.ObjectId, 
-    ref:'Range'
+    ref:'Review'
   }],
 })
 
