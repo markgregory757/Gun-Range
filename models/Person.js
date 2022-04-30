@@ -7,7 +7,9 @@ const personSchema = new mongoose.Schema({
     age: Number,
     image_url: String,
 
-    abilities: [{}]
+    abilities: [{
+      
+    }]
 })
 
 
