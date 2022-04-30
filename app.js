@@ -11,7 +11,6 @@ const mongoose = require("mongoose");
 const bcrypt = require('bcrypt');
 const saltRounds = +process.env.SALT; 
 
-// const Person = require("./models/Person");
 
 // ROUTES
 
