@@ -10,7 +10,7 @@ const personSchema = new Schema({
     abilities: [{
       
     }]
-})
+});
 
 
 module.exports = mongoose.model("Person", personSchema);
