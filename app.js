@@ -20,6 +20,7 @@ const loginRouter = require("./routes/login");
 const rangeRouter = require("./routes/addRange");
 const skillsRouter = require("./routes/skills");
 const blogRouter = require("./routes/blogs");
+const reviewRouter = require("./routes/addReview")
 const { appendFile } = require("fs");
 
 const app = express();
@@ -36,7 +37,7 @@ mongoose
   .catch(err => console.log(err));
 
 hbs.registerPartials(path.join(__dirname, "/views/partials"), (err) => {});
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "hbs");
 
 app.use(logger("dev"));
@@ -57,6 +58,7 @@ app.use('/createUser', usersRouter);
 app.use('/login', loginRouter);
 app.use('/partials/skills', skillsRouter);
 app.use('/addRange', rangeRouter);
+app.use('/addReview', reviewRouter);
 app.use('/blogs', blogRouter);
 
 
