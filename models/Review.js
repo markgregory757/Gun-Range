@@ -5,7 +5,7 @@ const person = require('./Person')
 const comment = require('./Comment')
 
 
-const reviewSchema = new mongoose.Schema({
+const reviewSchema = new Schema({
   review: {
     type: String,
     required: [true],
