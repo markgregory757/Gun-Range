@@ -2,16 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 const review = require('./Review')
 
-const rangeSchema = new mongoose.Schema({
+const rangeSchema = new Schema({
   name: String,
-  membersOnly: Boolean,
-  location: {
-    address: String,
-    city: String,
-    state: String,
-    zip: Number
-  },
-  image_url: [],
+  membersOnly: String,
+  address: String,
+  city: String,
+  state: String,
+  zip: Number,
+  image: [],
   lanes:{
     indoor: {
       number: Number,
@@ -24,10 +22,6 @@ const rangeSchema = new mongoose.Schema({
       distances: String,
       caliberRestrictions: []
     }
-  },
-  onsiteOferings: {
-    store: string,
-    gunsmith: Boolean,
   },
   review: [{ 
     type: Schema.Types.ObjectId, 

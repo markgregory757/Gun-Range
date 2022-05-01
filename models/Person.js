@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 
-const personSchema = new mongoose.Schema({
+const personSchema = new Schema({
     name: String,
     age: Number,
-    image_url: String,
+    image: String,
     password: String,
     abilities: [{
       
