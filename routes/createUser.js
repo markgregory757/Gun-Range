@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
     const salt = bcrypt.genSaltSync(saltRounds);
     const hash = bcrypt.hashSync(password, salt);
     console.log("password hash is ", hash);
-    // Create new user using your User model
+    // Create new user using your Person model
     const newUser = new Person({
       name,
       password: hash,
@@ -41,6 +41,7 @@ router.post("/", async (req, res) => {
     await newUser.save();
     res.render("index");
   }
+  res.redirect("createUser")
 });
 
 module.exports = router;

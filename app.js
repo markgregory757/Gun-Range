@@ -32,8 +32,8 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then((res) => console.log("db connected"))
-  .catch((err) => console.log(err));
+  .then(res => console.log("db connected"))
+  .catch(err => console.log(err));
 
 hbs.registerPartials(path.join(__dirname, "/views/partials"), (err) => {});
 app.set("views", path.join(__dirname, "views"));
@@ -43,8 +43,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(
-//   session({
+// app.use(session({
 //     secret: "secret",
 //     httpOnly: true,
 //     secure: true,
