@@ -25,36 +25,40 @@
     <form action="/addRange" method="POST">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" value="{{range.name}}">
-      <br>
-      <input type="checkbox" id="membersOnly" name="membersOnly" value="membersOnly">
-      <label for="membersOnly"> Members Only?</label><br>
-      <br>
-      <div id="location" name="location">
+    <br>
       <label for="address">Address:</label>
       <input type="text" id="address" name="address" value="{{range.address}}">
-      <br>
+    <br>
       <label for="city">city:</label>
       <input type="text" id="city" name="city" value="{{range.city}}">
-      <br>
+    <br>
       <label for="state">state:</label>
       <input type="text" id="state" name="state" value="{{range.state}}">
-      <br>
+    <br>
       <label for="zip">zip:</label>
       <input type="text" id="zip" name="zip" value="{{range.zip}}">
-      </div>
-      <br>
-      <div id="lanes" name="lanes">
-      <input type="radio" id="indoor" name="fav_language" value="indoor">
-      <label for="indoor">Indoor</label>
-      <input type="radio" id="outdoor" name="fav_language" value="outdoor">
-      <label for="outdoor">Outdoor</label>
-      <input type="radio" id="both" name="fav_language" value="both">
-      <label for="both">Both</label> 
-      </div>
-      <br>
+    <br>
+      <input type="checkbox" id="membersOnly" name="membersOnly" value="membersOnly">
+      <label for="membersOnly"> Members Only?</label>
+    <br>
+      <label for="indoorLanes">Indoor Lanes:</label>
+      <input type="number" value="0" max="42" min="0" id="indoorLanes" name="indoorLanes" value="{{range.indoor.number}}">
+    <br>
+      <label for="outdoorLanes">Outdoor Lanes:</label>
+      <input type="number" value="0" max="42" min="0" id="outdoorLanes" name="outdoorLanes" value="{{range.outdoor.number}}">
+    <br>
+      <input type="checkbox" id="trapSkeet" name="trapSkeet" value="trapSkeet">
+      <label for="trapSkeet"> Trap / Skeet?</label>
+    <br>
+      <input type="checkbox" id="rentSales" name="rentSales" value="rentSales">
+      <label for="rentSales"> Rental or Sales?</label>
+    <br>
+      <input type="checkbox" id="gunsmith" name="gunsmith" value="gunsmith">
+      <label for="gunsmith"> Gunsmith?</label>
+    <br>
       <label for="rangePicture">Pictures:</label>
       <input type="file" id="rangePicture" name="rangePicture" value="{{range.image_url}}"> 
-      <br>
+    <br>
       <input type="submit" value="Submit" href='/addReview/{{range._id}}'>
     </form>
   </div>
