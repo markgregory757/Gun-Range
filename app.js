@@ -12,6 +12,7 @@ const bcrypt = require('bcrypt');
 const saltRounds = +process.env.SALT; 
 
 
+
 // ROUTES
 
 const indexRouter = require("./routes/index");
