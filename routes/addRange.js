@@ -7,14 +7,9 @@ const jwt = require("jsonwebtoken");
 const async = require("hbs/lib/async");
 const { range } = require("express/lib/request");
 const ranges = []
-
-router.get("/", async (req, res) => {
-
-var express = require('express');
-var router = express.Router();
 const loginUser = require("../middleware/loginUser");
 
-router.get('/', loginUser, function (req, res) {
+router.get('/', loginUser, async function (req, res) {
 
     res.render('addRange');
     rangeCheck = await Range.find({})
