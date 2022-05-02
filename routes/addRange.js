@@ -7,8 +7,11 @@ const async = require("hbs/lib/async");
 const { range } = require("express/lib/request");
 const loginUser = require("../middleware/loginUser");
 const ranges = []
+const loginUser = require("../middleware/loginUser");
+const Person = require('../models/Person');
 
-router.get('/', loginUser, async function (req, res) {
+
+router.get('/', loginUser, function (req, res) {
 
     res.render('addRange');
     rangeCheck = await Range.find({})
