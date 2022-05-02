@@ -1,29 +1,48 @@
-var express = require('express');
-var router = express.Router();
+
+const express = require("express");
+const router = express.Router();
+const Range = require("../models/Range");
+const addRange = require("../views/addRange");
+const jwt = require("jsonwebtoken");
+const async = require("hbs/lib/async");
+const { range } = require("express/lib/request");
+const ranges = []
 const loginUser = require("../middleware/loginUser");
 const Person = require('../models/Person');
 
-router.get('/', loginUser, async function (req, res) {
-    const id = req.params.id;
-    const aPerson = await Person.findOne({_id: id});
-    console.log("User ", aPerson, " is adding a range.")
-    res.render('addRange', { title: 'Add Range', range });
+
+router.get('/', loginUser, function (req, res) {
+
+    res.render('addRange');
+    rangeCheck = await Range.find({})
+    rangeCheck.forEach(range => {
+      ranges.push(range.name) 
+    });
+    // console.log(ranges)
 });
 
-router.post('/', async(req, res) => {
-    const id = req.params.id;
-    console.log("POST Adding Range")
-    console.log("AR form is ", req.body)
-    console.log("ID is ", req.params.id)
-    const addRange = {
-        name: this.name,
-        membersOnly: membersOnly,
-        location: req.body.location,
-        lanes: {indoor, outdoor},
-        onsiteOferings: {store, gunsmith},
-        rangePicture: this.rangePicture,
-        review: [{}]
-    }
-});
+router.post("/", async (req, res) => {
+  const { name, membersOnly, address, city, state, zip, image, lanes, review } = req.body;
+  console.log(name, membersOnly, address, city, state, zip, image, lanes, review)
+
+  if (ranges.includes(name)) {
+    res.send("Range already exists")
+    console.log("Range already exists")
+
+  } else {
+
+    const newRange = new Range({
+      name, 
+      membersOnly, 
+      address, city, state, zip, 
+      image,
+      lanes,
+      review
+    })
+  await newRange.save();
+  // await console.log("range: ",newRange)
+  await res.render("/addReview", { range: newRange._id, });
+  }
+})
 
 module.exports = router

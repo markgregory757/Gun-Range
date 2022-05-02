@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <title>Range Index</title>
 </head>
 <!-- body -->
 <body>
-  <h1><a href="/">Hello World</a></h1>
+  <h1><a href="/">Hello Range</a></h1>
     <header>
       <ul>
         <li><a href="/">Home</a></li>
@@ -22,28 +23,41 @@
     </header>
 
 <div class="form">
+  
     <form action="/addRange" method="POST">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" value="{{range.name}}">
+      <br>
       <input type="checkbox" id="membersOnly" name="membersOnly" value="membersOnly">
       <label for="membersOnly"> Members Only?</label><br>
       <br>
-      <label for="location">Location:</label>
-      <input type="text" id="location" location="location" value="{{range.location}}">
+      <div id="location" name="location">
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" value="{{range.address}}">
       <br>
+      <label for="city">city:</label>
+      <input type="text" id="city" name="city" value="{{range.city}}">
+      <br>
+      <label for="state">state:</label>
+      <input type="text" id="state" name="state" value="{{range.state}}">
+      <br>
+      <label for="zip">zip:</label>
+      <input type="text" id="zip" name="zip" value="{{range.zip}}">
+      </div>
+      <br>
+      <div id="lanes" name="lanes">
       <input type="radio" id="indoor" name="fav_language" value="indoor">
       <label for="indoor">Indoor</label>
       <input type="radio" id="outdoor" name="fav_language" value="outdoor">
       <label for="outdoor">Outdoor</label>
       <input type="radio" id="both" name="fav_language" value="both">
       <label for="both">Both</label> 
+      </div>
       <br>
       <label for="rangePicture">Pictures:</label>
       <input type="file" id="rangePicture" name="rangePicture" value="{{range.image_url}}"> 
-
       <br>
-      <label for="review">Review:</label>
-      <textarea id="review" name="review" value="{{range.review}}"></textarea>
+      <input type="submit" value="Submit" href='/addReview/{{range._id}}'>
     </form>
   </div>
 </body>

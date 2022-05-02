@@ -10,6 +10,11 @@ height: 100%;
 font-family: 'Numans', sans-serif;
 }
 
+div{
+  background-color: rgba(173, 216, 230, 0.492); !important;
+  display: inline-block;
+}
+
 header ul li {
   display: inline-block;
   vertical-align: middle;
@@ -19,6 +24,7 @@ container{
 height: 100%;
 
 align-content: center;
+background-color: rgba(0,0,0,0.5) !important;
 }
 
 /* .card{
@@ -26,10 +32,10 @@ height: 370px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
-text-align: center; */
+text-align: center;
 
 background-color: rgba(0,0,0,0.5) !important;
-}
+} */
 
 .social_icon span{
 font-size: 60px;
