@@ -9,7 +9,7 @@ const rangeSchema = new Schema({
   city: String,
   state: String,
   zip: Number,
-  image: [],
+  imageURL: String,
   indoorLanes: Number,
   outdoorLanes: Number,
   trapSkeet: String,
