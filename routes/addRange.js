@@ -17,14 +17,19 @@ router.get('/', loginUser, async function (req, res) {
     rangeCheck.forEach(range => {
       ranges.push(range.name) 
     });
-    // console.log(ranges)
+    console.log("ranges: ",ranges)
 });
 
 router.post("/", async (req, res) => {
-  const { name, membersOnly, address, city, state, zip, image, lanes, review } = req.body;
-  // console.log(name, membersOnly, address, city, state, zip, image, lanes, review)
+  let { name, membersOnly, address, city, state, zip, imageURL, lanes, review } = req.body;
+  
+  if(membersOnly == null) {
+    membersOnly = "Open to the Public";
+  }
+  // console.log(name, membersOnly, address, city, state, zip, imageURL, lanes, review)
 
   if (ranges.includes(name)) {
+    console.log(ranges)
     res.send("Range already exists")
     // console.log("Range already exists")
 
@@ -34,10 +39,11 @@ router.post("/", async (req, res) => {
       name, 
       membersOnly, 
       address, city, state, zip, 
-      image,
+      imageURL,
       lanes,
       review
     })
+    console.log("newRange: ",newRange)
   await newRange.save();
   // await console.log("range: ",newRange)
   await res.render("addReview", { range: newRange._id, });
