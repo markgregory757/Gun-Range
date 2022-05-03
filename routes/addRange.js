@@ -1,4 +1,3 @@
-
 const express = require("express");
 const router = express.Router();
 const Range = require("../models/Range");
@@ -6,8 +5,11 @@ const addRange = require("../views/addRange");
 const jwt = require("jsonwebtoken");
 const async = require("hbs/lib/async");
 const { range } = require("express/lib/request");
+const loginUser = require("../middleware/loginUser");
 const ranges = []
 const loginUser = require("../middleware/loginUser");
+const Person = require('../models/Person');
+
 
 router.get('/', loginUser, async function (req, res) {
 
@@ -38,7 +40,7 @@ router.post("/", async (req, res) => {
       review
     })
   await newRange.save();
-  // await console.log("range: ",newRange)
+  await console.log("range: ",newRange)
   await res.render("/addReview", { range: newRange._id, });
   }
 })

@@ -27,8 +27,8 @@ router.get("/", async (req, res) => {
           console.log("access cookie")
       
           res.redirect("/")
-        } else {
-        res.redirect("login");
+        } else  {
+        res.redirect("/");
       }
       });
 

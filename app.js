@@ -12,11 +12,13 @@ const bcrypt = require('bcrypt');
 const saltRounds = +process.env.SALT; 
 
 
+
 // ROUTES
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/createUser");
 const loginRouter = require("./routes/login");
+const logoutRouter = require("./routes/logout")
 const rangeRouter = require("./routes/addRange");
 const skillsRouter = require("./routes/skills");
 const blogRouter = require("./routes/blogs");
@@ -56,6 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/createUser', usersRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter)
 app.use('/partials/skills', skillsRouter);
 app.use('/addRange', rangeRouter);
 app.use('/addReview', reviewRouter);
