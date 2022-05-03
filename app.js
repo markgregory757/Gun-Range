@@ -20,7 +20,7 @@ const usersRouter = require("./routes/createUser");
 const loginRouter = require("./routes/login");
 const logoutRouter = require("./routes/logout")
 const rangeRouter = require("./routes/addRange");
-const skillsRouter = require("./routes/skills");
+const detailsRouter = require("./routes/details");
 const blogRouter = require("./routes/blogs");
 const reviewRouter = require("./routes/addReview")
 const { appendFile } = require("fs");
@@ -59,7 +59,7 @@ app.use('/', indexRouter);
 app.use('/createUser', usersRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter)
-app.use('/partials/skills', skillsRouter);
+app.use('/details', detailsRouter);
 app.use('/addRange', rangeRouter);
 app.use('/addReview', reviewRouter);
 app.use('/blogs', blogRouter);

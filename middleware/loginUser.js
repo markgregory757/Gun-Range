@@ -8,7 +8,7 @@ const loginUser = async (req, res, next) => {
         console.log("Access denied");
         res.redirect("/login");
     } else {
-    console.log("your good")
+    console.log("Access granted")
     next();
         }
     })

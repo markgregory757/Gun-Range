@@ -46,7 +46,7 @@ router.post("/", async (req, res) => {
     console.log("newRange: ",newRange)
   await newRange.save();
   // await console.log("range: ",newRange)
-  await res.render("addReview", { range: newRange._id, });
+ res.render("addReview", { range: newRange._id, });
   }
 })
 
