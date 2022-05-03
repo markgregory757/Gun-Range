@@ -22,11 +22,11 @@ router.get('/', loginUser, async function (req, res) {
 
 router.post("/", async (req, res) => {
   const { name, membersOnly, address, city, state, zip, image, lanes, review } = req.body;
-  console.log(name, membersOnly, address, city, state, zip, image, lanes, review)
+  // console.log(name, membersOnly, address, city, state, zip, image, lanes, review)
 
   if (ranges.includes(name)) {
     res.send("Range already exists")
-    console.log("Range already exists")
+    // console.log("Range already exists")
 
   } else {
 
@@ -39,8 +39,8 @@ router.post("/", async (req, res) => {
       review
     })
   await newRange.save();
-  await console.log("range: ",newRange)
-  await res.render("/addReview", { range: newRange._id, });
+  // await console.log("range: ",newRange)
+  await res.render("addReview", { range: newRange._id, });
   }
 })
 
