@@ -6,8 +6,14 @@ const rangeSchema = new Schema({
   name: String,
   membersOnly: String,
   address: String,
-  city: String,
-  state: String,
+  city: {
+    type: String,
+    required: [true, 'City Required!']
+  },
+  state: {
+    type: String,
+    required: [true, 'State Required!']
+  },
   zip: Number,
   imageURL: String,
   indoorLanes: Number,
