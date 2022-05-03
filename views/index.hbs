@@ -24,22 +24,20 @@
   <h1><a href="/">Arms and Safety</a></h1>
 
 {{!-- populate current ranges --}}
-
   <div id="ranges">
+    <header> Ranges: </header>
     {{#each ranges}}
-      <div class="aRange">
-        <p class="name">{{this.name}}</p>
-        <img class="rangePic" src="{{this.imageURL}}" style="width: 200px;px"><br>
-        <p><span>Details:</span><br>
-        {{this.membersOnly}}<br>
-        {{this.address}}<br>
-        {{this.city}}<br>
-        {{this.state}} {{this.zip}}<br></p>
-        <a class="btn" href="/details/{{this._id}}">Details</a>
-      </div>
+      {{> rangeDiv ranges=this}}
     {{/each}}
   </div>
 
+{{!-- populate current people --}}
+  <div id="people">
+    <header> Users: </header>
+    {{#each people}}
+      {{> peopleDiv people=this}}
+    {{/each}}
+  </div>
   </body>
 
 </html>
