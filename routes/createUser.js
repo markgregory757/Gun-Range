@@ -18,11 +18,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  console.log(req.body);
-  const { name, password, age, image, abilities } = req.body;
-  console.log(name, password, age, image, abilities);
 
-router.post("/", async (req, res) => {
 // console.log(req.body);
   const { name, password, age, image, abilities } = req.body;
 // console.log(name, password, age, image, abilities);

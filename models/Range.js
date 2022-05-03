@@ -10,19 +10,11 @@ const rangeSchema = new Schema({
   state: String,
   zip: Number,
   image: [],
-  lanes:{
-    indoor: {
-      number: Number,
-      distances: String,
-      caliberRestrictions: []
-    },
-    outdoor: {
-      number: Number,
-      coveredBench: Boolean,
-      distances: String,
-      caliberRestrictions: []
-    }
-  },
+  indoorLanes: Number,
+  outdoorLanes: Number,
+  trapSkeet: String,
+  rentSales: String,
+  gunsmith: String,
   review: [{ 
     type: Schema.Types.ObjectId, 
     ref:'Review'}]

@@ -1,4 +1,3 @@
-
 const express = require("express");
 const router = express.Router();
 const Range = require("../models/Range");
@@ -6,12 +5,12 @@ const addRange = require("../views/addRange");
 const jwt = require("jsonwebtoken");
 const async = require("hbs/lib/async");
 const { range } = require("express/lib/request");
-const ranges = []
+const ranges = [];
 const loginUser = require("../middleware/loginUser");
 const Person = require('../models/Person');
 
 
-router.get('/', loginUser, function (req, res) {
+router.get('/', loginUser, async function (req, res) {
 
     res.render('addRange');
     rangeCheck = await Range.find({})
@@ -23,11 +22,11 @@ router.get('/', loginUser, function (req, res) {
 
 router.post("/", async (req, res) => {
   const { name, membersOnly, address, city, state, zip, image, lanes, review } = req.body;
-  console.log(name, membersOnly, address, city, state, zip, image, lanes, review)
+  // console.log(name, membersOnly, address, city, state, zip, image, lanes, review)
 
   if (ranges.includes(name)) {
     res.send("Range already exists")
-    console.log("Range already exists")
+    // console.log("Range already exists")
 
   } else {
 
@@ -41,7 +40,7 @@ router.post("/", async (req, res) => {
     })
   await newRange.save();
   // await console.log("range: ",newRange)
-  await res.render("/addReview", { range: newRange._id, });
+  await res.render("addReview", { range: newRange._id, });
   }
 })
 
