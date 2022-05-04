@@ -15,9 +15,11 @@ router.get('/', loginUser, async function (req, res) {
     res.render('addRange');
     rangeCheck = await Range.find({})
     rangeCheck.forEach(range => {
+      if (!ranges.includes(range.name)) {
       ranges.push(range.name) 
+      }
     });
-    console.log("ranges: ",ranges)
+    // console.log("ranges: ",ranges)
 });
 
 router.post("/", async (req, res) => {
@@ -29,7 +31,7 @@ router.post("/", async (req, res) => {
   // console.log(name, membersOnly, address, city, state, zip, imageURL, lanes, review)
 
   if (ranges.includes(name)) {
-    console.log(ranges)
+    // console.log(ranges)
     res.send("Range already exists")
     // console.log("Range already exists")
 
@@ -43,7 +45,7 @@ router.post("/", async (req, res) => {
       lanes,
       review
     })
-    console.log("newRange: ",newRange)
+    // console.log("newRange: ",newRange)
   await newRange.save();
   // await console.log("range: ",newRange)
   await res.render("addReview", { range: newRange._id, });
