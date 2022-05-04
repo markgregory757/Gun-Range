@@ -2,8 +2,7 @@
 <html lang="en">
   <!-- header -->
 <head>
-
-
+  <link rel="icon" type="image/png" href="/public/images/favicon-16x16.png" sizes="16x16">
   <link href="/style.css" type="text/css" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +23,7 @@
   <h1><a href="/">Arms and Safety</a></h1>
 
 {{!-- populate current ranges --}}
-  <div id="ranges">
+  <div id="ranges" >
     <header> Ranges: </header>
     {{#each ranges}}
       {{> rangeDiv ranges=this}}
