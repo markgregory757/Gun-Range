@@ -7,9 +7,10 @@ const personSchema = new Schema({
     age: Number,
     image: String,
     password: String,
-    abilities: [{
-      
-    }]
+    ranges: [{ type: mongoose.Schema.Types.ObjectId, ref: "Range"}],
+    blogs: [{ type: mongoose.Schema.Types.ObjectId, ref: "Blog"}],
+    review: [{ type: mongoose.Schema.Types.ObjectId, ref: "Review"}],
+    comment: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment"}]
 });
 
 
