@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 body{
+  text-shadow: white 0px 0px 15px ;
 background-image: url('https://source.unsplash.com/1600x900/?shooting-range');
 background-size: cover;
 background-repeat: no-repeat;
@@ -10,19 +11,54 @@ height: 100%;
 font-family: 'Numans', sans-serif;
 }
 
+form{
+  background-color: rgba(173, 216, 230, 0.492);
+  padding:5px
+}
+
 div{
-  background-color: rgba(173, 216, 230, 0.492); !important;
   display: inline-block;
+  margin: 5px;
+  vertical-align: top;
+  padding: 3px
+}
+
+.ranges{
+  text-indent: 15px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.range{
+  text-shadow: white 0px 0px 0px !important;
+  text-align:center;
+  background-color: rgba(173, 216, 230, 0.492);
+  position:static;
+  left: 4em;
+}
+
+.people{
+  text-indent: 15px;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.person{
+  text-shadow: white 0px 0px 0px !important;
+  text-align:center;
+  background-color: rgba(173, 216, 230, 0.492);
+  margin-bottom: 3px;
 }
 
 header ul li {
+  text-shadow: white 0px 0px 15px !important;
   display: inline-block;
   vertical-align: middle;
 }
 
-container{
+.container{
 height: 100%;
-
 align-content: center;
 background-color: rgba(0,0,0,0.5) !important;
 }
