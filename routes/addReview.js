@@ -7,10 +7,12 @@ const async = require("hbs/lib/async");
 const id = require("../middleware/getRangeId" )
 
 
-router.get("/:id", id, async (req, res) => {
-    rangeToReview = await Range.findById({id})
+router.get("/:id", async (req, res) => {
+  const id = req.params.id;
+    // console.log(id)
+    const rangeToReview = await Range.findById(id)
     console.log(rangeToReview)
-    res.render('addReview');
+    res.render('addReview', {title: "Details", range: rangeToReview});
 });
 
 router.post("/", async (req, res) => {
