@@ -15,7 +15,9 @@ router.get('/', loginUser, async function (req, res) {
     res.render('addRange');
     rangeCheck = await Range.find({})
     rangeCheck.forEach(range => {
+      if (!ranges.includes(range.name)) {
       ranges.push(range.name) 
+      }
     });
     console.log("ranges: ",ranges)
 });
@@ -40,8 +42,12 @@ router.post("/", async (req, res) => {
       membersOnly, 
       address, city, state, zip, 
       imageURL,
-      lanes,
-      review
+      indoorLanes,
+      outdoorLanes,
+      trapSkeet,
+      rentSales,
+      gunsmith,
+      review: []
     })
     console.log("newRange: ",newRange)
   await newRange.save();

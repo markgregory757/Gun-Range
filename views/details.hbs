@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <link href="style.css" type="text/css" rel="stylesheet">
+      <link href="/style.css" type="text/html" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,21 +21,18 @@
     </ul>
      
     </header>
-   
+   <main>
+       <div>
       <h1>{{range.name}}</h1>
-      <h2>{{range.}}</h2>
-    {{!-- another way to populate --}}
- {{#each ranges }}
-        <div class="aRange">
-        <img class="aRange" src="{{ranges.image_url}}">
-        <p class="name">{{ranges.name}}</p>
-        <p><span>Address: {{ranges.address}}</span> </p>
-        <a class="btn" href="/details">Details</a>
-      </div>
-      {{/each}}
-  
-      
+      <h2>{{range.state}}</h2>
+       {{!-- {{log  this}} --}}
+
+
     
+
+  
+      </div>
+    </main>
      
 
 </body>
