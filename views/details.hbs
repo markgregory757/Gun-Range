@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="/style.css" type="text/html" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" href="/public/images/favicon-16x16.png" sizes="16x16">
+    <link href="/style.css" type="text/css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Details</title>
+    <title>Shooting Range Details</title>
+    
 </head>
 <body>
-    <div class="container">
     <header>
-      <ul>
-        <ul>
+    <div class="range-container">
+      <nav class="nav">
+    <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/createUser">Register</a></li>
       <li><a href="/addRange">New Range</a></li>
@@ -18,32 +21,39 @@
       <li><a href="/login">Login</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
-      </ul>
-    </header>
-    <main>
-      <h1>{{range.name}}</h1>
-      {{!-- <div id="ranges">
-         {{#each ranges}}
-          <div class="rangeDetails"> --}}
-              <h2 >{{range.trapSkeet}}</h2>
-              <br>
-              <p class="oudoorLanes">{{range.outdoorLanes}}</p>
-              <br>
-              <p class="trapSkeet">{{range.trapSkeet}}</p>
-              <br>
-              <p class="rentSales">{{range.rentSales}}</p>
-              <br>
-              <p class="gunsmith">{{range.gunsmith}}</p>
-              <br>
-          {{!-- {{/each}} --}}
+     </nav>
           </div>
-      </div>
-     
+    </header>
    
-  
-      
-    </main>
-     
+   <div class="range-details">
+   <h1> Range and Details: </h1>
+    <h2>Name:   {{range.name}}</h2><br>
+    <a>{{range.membersOnly}}</a><br>
+    <a>Address:     {{range.address}}</a><br>
+    <a>City:    {{range.city}}</a><br>
+    <a>State:   {{range.state}}</a><br> 
+    <a>Zip: {{ranges.zip}}</a><br>
+    <a>Indoor Lanes:    {{range.indoorLanes}}</a><br>
+    <a>Outdoor Lanes:   {{range.outdoorLanes}}</a><br>
+    <a>Trap / Skeet:    {{range.trapSkeet}}</a><br>
+    <a>Rent or Sell Equipment:  {{range.rentSales}}</a><br>
+    <a>Is there a gunsmith onsite:  {{range.gunsmith}}</a><br> 
+   <div class="image-header">Images of the Range</div><br>
+    <img src="{{range.imageURL}}">
   </div>
+
+    <form action ="/url" method="GET">
+        <input type="text" placeholder="">
+    </form>
+
+  <button id="clickButton">Add a Review</button>
+    <br/><br />
+    <input id="readTheInput" />
+    <script>
+    document.getElementById("clickButton").addEventListener("click", () =>{
+    document.getElementById("readTheInput").value += "JavaScript";
+    });
+</script>
+
 </body>
 </html>
