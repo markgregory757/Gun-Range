@@ -44,19 +44,14 @@
     <img src="{{range.imageURL}}">
   </div>
 
-    <form action ="/url" method="GET">
-        <input type="text" placeholder="">
-    </form>
 
-  <button id="clickButton">Add a Review</button>
-    <br/><br />
-    <input id="readTheInput" />
-    <script>
+<a class='btn' href='/addReview/{{range._id}}'>Add A Review</a>
+    {{!-- <script>
     document.getElementById("clickButton").addEventListener("click", () =>{
     document.getElementById("readTheInput").value += "JavaScript";
     });
 </script>
-trying to push
+trying to push --}}
 
 </body>
 </html>

@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <link href="/style.css" type="text" rel="stylesheet">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Details</title>
+  <link rel="icon" type="image/png" href="/public/images/favicon-16x16.png" sizes="16x16">
+    <link href="/style.css" type="text/css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Your Review</title>
   </head>
   <body>
-    <div class="container">
-    <header>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/createUser">Register</a></li>
-        <li><a href="/addRange">New Range</a></li>
-        <li><a href="/blogs">Blogs</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/logout">Logout</a></li>
-      </ul>
-    </header>
 <!-- body -->
 <body>
 
-  <h1><a href="/">Hello Users</a></h1>
   <header>
     <ul>
-      {{!-- <li><a href="/createUser">Register</a></li> --}}
+      <li><a href="/">Home</a></li>
+      <li><a href="/createUser">Register</a></li>
       <li><a href="/addRange">New Range</a></li>
+      <li><a href="/blogs">Blogs</a></li>
       <li><a href="/login">Login</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
   </header>
+  <h1>Hello Review</h1><br>
+  <div class="newReview">
+    <p><label for="newReview">Add Review for: {{range.name}}</label>
+    <form action='/addReview' method='POST'>
+      <input type="hidden" id="reviewer" name="reviewer" value="{{review.reviewer}}">
+      <input type="hidden" id="range" name="range" value="{{range.name}}">
+      <textarea name="newReview"
+        value="{{review.content}}"
+        id="newReview" 
+        rows="4" 
+        cols="75" 
+        placeholder="Mostly Harmless"
+      ></textarea><br>
+      <input type='submit' value='Submit' href='/details/{{range._id}}' />
+    </form>
+  </div>
+</body>
