@@ -37,6 +37,7 @@ div{
   left: 4em;
 }
 
+
 .people{
   text-indent: 15px;
   -webkit-flex: 1;
@@ -49,6 +50,11 @@ div{
   text-align:center;
   background-color: rgba(173, 216, 230, 0.492);
   margin-bottom: 3px;
+}
+
+header {
+  background: #55b5aa;
+  
 }
 
 header ul li {
@@ -136,4 +142,65 @@ color: white;
 
 .links a{
 margin-left: 4px;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float:left;
+}
+
+
+nav {
+  font-size: larger;
+  float: right;
+  color:rgba(154, 223, 128, 0.492);
+  
+}
+
+.range-details a{
+ 
+  font-size: 28px;
+  color:rgb(19, 16, 243);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding-left: 30%;
+  
+}
+
+.range-details h1{
+  color:rgb(119, 246, 250);
+  font-size: 45px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding-left: 45%;
+  border-color:rgb(4, 36, 4);
+  border-width: 5px;
+  border-style: solid;
+}
+
+.range-details h2{
+  color:rgb(250, 140, 112);
+  font-size: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-left: 25%;
+ 
+}
+
+
+.range-details img{
+  border-radius: 50px;
+  width: 30%;
+  padding-left: 20%;
+}
+
+.range-details div{
+  
+  font-style: italic;
+}
+
+.range-details img{
+  padding-left: 8%;
 }

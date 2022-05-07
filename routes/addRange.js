@@ -23,7 +23,7 @@ router.get('/', loginUser, async function (req, res) {
 });
 
 router.post("/", async (req, res) => {
-  let { name, membersOnly, address, city, state, zip, imageURL, lanes, review } = req.body;
+  let { name, membersOnly, address, city, state, zip, imageURL, indoorLanes, outdoorLanes, trapSkeet, rentSales, gunsmith} = req.body;
   
   if(membersOnly == null) {
     membersOnly = "Open to the Public";
@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
       trapSkeet,
       rentSales,
       gunsmith,
-      review: []
+     
     })
     // console.log("newRange: ",newRange)
   await newRange.save();
