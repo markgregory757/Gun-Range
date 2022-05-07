@@ -164,7 +164,7 @@ nav {
 
 .range-details a{
  
-  font-size: 32px;
+  font-size: 28px;
   color:rgb(19, 16, 243);
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding-left: 30%;
@@ -189,10 +189,6 @@ nav {
  
 }
 
-.range-details footer{
-  color:rgb(219, 27, 27);
-  padding-left: 25%;
-}
 
 .range-details img{
   border-radius: 50px;
@@ -200,9 +196,9 @@ nav {
   padding-left: 20%;
 }
 
-.image-header {
+.range-details div{
   
-  font-size: larger;
+  font-style: italic;
 }
 
 .range-details img{
