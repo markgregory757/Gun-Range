@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const async = require("hbs/lib/async");
 const id = require("../middleware/getRangeId" )
 
-router.get("/:id",  async (req, res) => {
+router.get("/:id", async (req, res) => {
     console.log('reached for id', req.params)
     const id = req.params.id;
     // console.log(id)

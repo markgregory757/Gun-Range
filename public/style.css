@@ -30,7 +30,7 @@ div{
   flex: 1;
 }
 .range{
-  text-shadow: white 0px 0px 0px !important;
+  text-shadow: rgba(173, 216, 230, 0.492) 0px 0px 10px !important;
   text-align:center;
   background-color: rgba(173, 216, 230, 0.492);
   position:static;
@@ -46,7 +46,7 @@ div{
 }
 
 .person{
-  text-shadow: white 0px 0px 0px !important;
+  text-shadow: rgba(173, 216, 230, 0.492) 0px 0px 10px !important;
   text-align:center;
   background-color: rgba(173, 216, 230, 0.492);
   margin-bottom: 3px;

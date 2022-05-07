@@ -11,22 +11,22 @@
 </head>
 <body>
     <header>
-    <div class="range-container">
+      <div class="range-container">
       <nav class="nav">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/createUser">Register</a></li>
-      <li><a href="/addRange">New Range</a></li>
-      <li><a href="/blogs">Blogs</a></li>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/logout">Logout</a></li>
-    </ul>
-     </nav>
-          </div>
-    </header>
-   
-   <div class="range-details">
-   <h1> Range and Details: </h1>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/createUser">Register</a></li>
+        <li><a href="/addRange">New Range</a></li>
+        <li><a href="/blogs">Blogs</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="range-details">
+    <h1> Range and Details: </h1>
     <h2>Name:   {{range.name}}</h2><br>
     <a>{{range.membersOnly}}</a><br>
     <a>Address:     {{range.address}}</a><br>
@@ -38,23 +38,20 @@
     <a>Trap / Skeet:    {{range.trapSkeet}}</a><br>
     <a>Rent or Sell Equipment:  {{range.rentSales}}</a><br>
     <a>Is there a gunsmith onsite:  {{range.gunsmith}}</a><br> 
-    <div class="image-header"><a href="{{range.imageURL}}">Images</a></div><br>
+      <div class="image-header">
+        <a href="{{range.imageURL}}">Images</a>
+      </div><br>
     <img src="{{range.imageURL}}">
   </div>
 
-    <form action ="/url" method="GET">
-        <input type="text" placeholder="">
-    </form>
 
-  <button id="clickButton">Add a Review</button>
-    <br/><br />
-    <input id="readTheInput" />
-    <script>
+<a class='btn' href='/addReview/{{range._id}}'>Add A Review</a>
+    {{!-- <script>
     document.getElementById("clickButton").addEventListener("click", () =>{
     document.getElementById("readTheInput").value += "JavaScript";
     });
 </script>
-trying to push
+trying to push --}}
 
 </body>
 </html>

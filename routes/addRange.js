@@ -28,10 +28,8 @@ router.post("/", async (req, res) => {
   if(membersOnly == null) {
     membersOnly = "Open to the Public";
   }
-  // console.log(name, membersOnly, address, city, state, zip, imageURL, lanes, review)
 
   if (ranges.includes(name)) {
-    // console.log(ranges)
     res.send("Range already exists")
     // console.log("Range already exists")
 
