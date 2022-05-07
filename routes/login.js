@@ -24,7 +24,8 @@ router.get("/", async (req, res) => {
           const payload = {id: person._id, name: username}
           const token = jwt.sign(payload, secretKey)
           res.cookie("accessToken", token);
-          console.log("access cookie")
+          res.cookie("username", username)
+          console.log("access cookie", username)
       
           res.redirect("/")
         } else  {

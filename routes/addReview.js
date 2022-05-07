@@ -8,7 +8,7 @@ const id = require("../middleware/getRangeId" )
 const loginUser = require("../middleware/loginUser");
 const Person = require('../models/Person');
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", loginUser, async (req, res) => {
   const id = req.params.id;
     // console.log(id)
     const rangeToReview = await Range.findById(id)
