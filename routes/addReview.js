@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
   //   range
   // })
   // await newReview.save();
-  res.render('/')
+  // res.render('/')
 })
 
 module.exports = router
