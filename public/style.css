@@ -17,19 +17,23 @@ form{
 }
 
 div{
-  display: inline-block;
+  /* display: inline-block; */
   margin: 5px;
   vertical-align: top;
   padding: 3px
 }
 
 .ranges{
+  
   text-indent: 15px;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-}
+  vertical-align: top;
+ }  
+
 .range{
+  display: inline-block;
   text-shadow: rgba(173, 216, 230, 0.492) 0px 0px 10px !important;
   text-align:center;
   background-color: rgba(173, 216, 230, 0.492);
@@ -39,6 +43,7 @@ div{
 
 
 .people{
+  
   text-indent: 15px;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -46,9 +51,11 @@ div{
 }
 
 .person{
+  display: inline-block;
   text-shadow: rgba(173, 216, 230, 0.492) 0px 0px 10px !important;
   text-align:center;
   background-color: rgba(173, 216, 230, 0.492);
+  position:static;
   margin-bottom: 3px;
 }
 
@@ -64,7 +71,7 @@ header ul li {
 }
 
 .container{
-height: 100%;
+height: auto;
 align-content: center;
 background-color: rgba(0,0,0,0.5) !important;
 }
@@ -157,7 +164,7 @@ header::after {
 
 nav {
   font-size: larger;
-  float: right;
+  float:inherit;
   color:rgba(154, 223, 128, 0.492);
   
 }
@@ -175,7 +182,7 @@ nav {
   color:rgb(119, 246, 250);
   font-size: 45px;
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  padding-left: 45%;
+  padding-left: 15%;
   border-color:rgb(4, 36, 4);
   border-width: 5px;
   border-style: solid;
@@ -189,18 +196,35 @@ nav {
  
 }
 
-
 .range-details img{
   border-radius: 50px;
   width: 30%;
-  padding-left: 20%;
+  /* padding-left:  */
 }
 
 .range-details div{
-  
-  font-style: italic;
+  font-style:italic;
 }
 
-.range-details img{
-  padding-left: 8%;
+.image {
+ height: 300px;
+ width: 300px;
 }
+
+.image-header {
+  /* float:right; */
+  padding-left: 35%;
+}
+
+.image-header img{
+  height: 300px;
+  border-radius: 50%;
+  width: 300px;
+  /* padding-left: 33%; */
+} 
+
+.image-header a{
+  font-size: 30px;
+}
+
+

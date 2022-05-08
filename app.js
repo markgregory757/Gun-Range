@@ -8,6 +8,7 @@ const logger = require("morgan");
 const favicon = require('serve-favicon');
 const path = require("path");
 const hbs = require("hbs");
+const exphbs = require("express-handlebars")
 const mongoose = require("mongoose");
 const bcrypt = require('bcrypt');
 const saltRounds = +process.env.SALT; 
@@ -38,11 +39,12 @@ mongoose
   .then(res => console.log("db connected"))
   .catch(err => console.log(err));
 
-hbs.registerPartials(path.join(__dirname, "/views/partials"), (err) => {});
-
-app.use(favicon(path.join(__dirname, 'public/images/favicon.ico')))
-app.set("views", path.join(__dirname, "/views"));
-app.set("view engine", "hbs");
+  
+  app.use(favicon(path.join(__dirname, 'public/images/favicon.ico')))
+  app.set("view engine", "hbs");
+  
+  app.set("views", path.join(__dirname, "/views"));
+  hbs.registerPartials(path.join(__dirname, "/views/partials"), (err) => {});
 
 app.use(logger("dev"));
 app.use(express.json());

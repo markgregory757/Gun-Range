@@ -15,4 +15,8 @@ router.get("/:id", async (req, res) => {
     res.render('details', {title: "Details", range: aRange});
 });
 
+router.get("/personDetails/:id", async (req, res) => {
+    res.render("personDetails")
+})
+
 module.exports = router;
