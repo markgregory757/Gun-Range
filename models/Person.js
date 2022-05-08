@@ -5,11 +5,9 @@ const Schema = mongoose.Schema
 const personSchema = new Schema({
     name: String,
     age: Number,
-    image: String,
+    imageURL: String,
     password: String,
-    abilities: [{
-      
-    }]
+    about: String
 });
 
 

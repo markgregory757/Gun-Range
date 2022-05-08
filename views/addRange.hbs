@@ -24,7 +24,7 @@
     <h1><a href='/'>Hello Range</a></h1>
     <div class='form'>
 
-      <form action='/addRange' method='POST'>
+      <form class="add-range-form" action='/addRange' method='POST'>
       <h3>Add New Range:</h3>
         <label for='name'>Name:</label>
         <input type='text' id='name' name='name' value='{{range.name}}' />
@@ -77,28 +77,40 @@
         />
         <br />
         <div id="trap/skeet">
-        <input
-          type='checkbox'
-          id='trapSkeet'
-          name='trapSkeet'
-          value='trapSkeet'
-        />
-        <label for='trapSkeet'> Trap / Skeet?</label>
+        <label for='trapSkeet'>Is Trap / Skeet Available?</label>
+        <p><input type="radio" name="trap/skeet"
+       checked>Yes</input>
+       </p>
+       <p>
+       <input type="radio" name="trap/skeet"
+       checked>No</input></p>
         </div>
         <br />
-        <input
-          type='checkbox'
-          id='rentSales'
-          name='rentSales'
-          value='rentSales'
-        />
-        <label for='rentSales'> Rental or Sales?</label>
+        <div id="rentSales">
+        <label for='rentSales'> Ar Rentals or Sales Available?</label>
+        <p>
+        <input type="radio" name="rentals"
+       checked>Yes</input></p>
+       <p>
+        <input type="radio" name="rentals"
+        checked>No</input>
+        </p>
+        </div>
         <br />
-        <input type='checkbox' id='gunsmith' name='gunsmith' value='gunsmith' />
-        <label for='gunsmith'> Gunsmith?</label>
-        <br />
-        <label for='image'>ImageUrl</label>
+        <div id="gunsmith">
+        <label for='gunsmith'>Gunsmith available at this location?</label>
+        <p>
+        <input type="radio" name="gunsmith"
+       checked>Yes</input></p>
+       <p>
+        <input type="radio" name="gunsmith"
+        checked>No</input>s
+        </p>
+        </div>
+        <br>
+        <label for='image'>Add an image</label>
         <input
+          placeholder="url here"
           type='text'
           id='image'
           name='imageURL'

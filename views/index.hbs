@@ -10,34 +10,28 @@
 <!-- body -->
 <body>
 
-  <header>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/createUser">Register</a></li>
-      <li><a href="/addRange">New Range</a></li>
-      <li><a href="/blogs">Blogs</a></li>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/logout">Logout</a></li>
-    </ul>
-  </header>
+ {{> header }}
+
   <h1>Arms and Safety</h1>
 
-{{!-- populate current ranges --}}
+{{!-- populate current people --}}
+  <div class="person">
+    <h4> Users: </h4>
+    {{#each people}}
+      {{> peopleDiv people=this}}
+    {{/each}}
+  </div>
 
-  <div class="ranges" >
+
+{{!-- populate current ranges --}}
+  <div class="range" >
     <h4> Ranges: </h4>
     {{#each ranges}}
       {{> rangeDiv ranges=this}}
     {{/each}}
   </div>
 
-{{!-- populate current people --}}
-  <div class="people">
-    <h4> Users: </h4>
-    {{#each people}}
-      {{> peopleDiv people=this}}
-    {{/each}}
-  </div>
+
   </body>
 
 </html>
