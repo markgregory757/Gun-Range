@@ -25,7 +25,7 @@
   <div class="newReview">
     <p><label for="newReview">Add Review for: {{range.name}}</label>
     <form action='/addReview' method='POST'>
-      <input type="hidden" id="reviewer" name="reviewer" value="{{review.reviewer}}">
+      <input type="hidden" id="reviewer" name="reviewer" value="{{req.cookies.username}}">
       <input type="hidden" id="range" name="range" value="{{range.name}}">
       <textarea name="newReview"
         value="{{review.content}}"
