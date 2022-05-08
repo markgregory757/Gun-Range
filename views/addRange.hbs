@@ -19,102 +19,102 @@
         <li><a href='/blogs'>Blogs</a></li>
         <li><a href='/logout'>Logout</a></li>
       </ul>
-      </div>
-    </header>
+    </div>
+  </header>
     <h1><a href='/'>Hello Range</a></h1>
     <div class='form'>
 
       <form class="add-range-form" action='/addRange' method='POST'>
       <h3>Add New Range:</h3>
-        <label for='name'>Name:</label>
-        <input type='text' id='name' name='name' value='{{range.name}}' />
-        <br />
-        <label for='address'>Address:</label>
-        <input
-          type='text'
-          id='address'
-          name='address'
-          value='{{range.address}}'
-        />
-        <br />
-        <label for='city'>City:</label>
-        <input type='text' id='city' name='city' value='{{range.city}}' />
-        <br />
-        <label for='state'>State:</label>
-        <input type='text' id='state' name='state' value='{{range.state}}' />
-        <br />
-        <label for='zip'>Zip:</label>
-        <input type='text' id='zip' name='zip' value='{{range.zip}}' />
-        <br />
-        <input
-          type='checkbox'
-          id='members Only'
-          name='members Only'
-          value='members Only'
-        />
-        <label for='members Only'> Members Only?</label>
-        <br />
-        <label for='indoorLanes'>Indoor Lanes:</label>
-        <input
-          type='number'
-          value='0'
-          max='42'
-          min='0'
-          id='indoorLanes'
-          name='indoorLanes'
-          value='{{range.indoor.number}}'
-        />
-        <br />
-        <label for='outdoorLanes'>Outdoor Lanes:</label>
-        <input
-          type='number'
-          value='0'
-          max='42'
-          min='0'
-          id='outdoorLanes'
-          name='outdoorLanes'
-          value='{{range.outdoor.number}}'
-        />
-        <br />
-        <div id="trap/skeet">
-        <label for='trapSkeet'>Is Trap / Skeet Available?</label>
-        <p><input type="radio" name="trap/skeet"
-       checked>Yes</input>
-       </p>
-       <p>
-       <input type="radio" name="trap/skeet"
-       checked>No</input></p>
-        </div>
-        <br />
-        <div id="rentSales">
-        <label for='rentSales'> Ar Rentals or Sales Available?</label>
-        <p>
-        <input type="radio" name="rentals"
-       checked>Yes</input></p>
-       <p>
-        <input type="radio" name="rentals"
-        checked>No</input>
-        </p>
-        </div>
-        <br />
-        <div id="gunsmith">
-        <label for='gunsmith'>Gunsmith available at this location?</label>
-        <p>
-        <input type="radio" name="gunsmith"
-       checked>Yes</input></p>
-       <p>
-        <input type="radio" name="gunsmith"
-        checked>No</input>s
-        </p>
-        </div>
-        <br>
-        <label for='image'>Add an image</label>
-        <input
-          placeholder="url here"
-          type='text'
-          id='image'
-          name='imageURL'
-          value='{{range.imageURL}}'
+      <label for='name'>Name:</label>
+      <input type='text' id='name' name='name' value='{{range.name}}' />
+      <br />
+      <label for='address'>Address:</label>
+      <input
+        type='text'
+        id='address'
+        name='address'
+        value='{{range.address}}'
+      />
+      <br />
+      <label for='city'>City:</label>
+      <input type='text' id='city' name='city' value='{{range.city}}' />
+      <br />
+      <label for='state'>State:</label>
+      <input type='text' id='state' name='state' value='{{range.state}}' />
+      <br />
+      <label for='zip'>Zip:</label>
+      <input type='text' id='zip' name='zip' value='{{range.zip}}' />
+      <br />
+      <input
+        type='checkbox'
+        id='members Only'
+        name='members Only'
+        value='members Only'
+      />
+      <label for='members Only'> Members Only?</label>
+      <br />
+      <label for='indoorLanes'>Indoor Lanes:</label>
+      <input
+        type='number'
+        value='0'
+        max='42'
+        min='0'
+        id='indoorLanes'
+        name='indoorLanes'
+        value='{{range.indoor.number}}'
+      />
+      <br />
+      <label for='outdoorLanes'>Outdoor Lanes:</label>
+      <input
+        type='number'
+        value='0'
+        max='42'
+        min='0'
+        id='outdoorLanes'
+        name='outdoorLanes'
+        value='{{range.outdoor.number}}'
+      />
+      <br />
+      <div id="trap/skeet">
+      <label for='trapSkeet'>Is Trap / Skeet Available?</label>
+      <p><input type="radio" name="trap/skeet"
+      checked>Yes</input>
+      </p>
+      <p>
+      <input type="radio" name="trap/skeet"
+      checked>No</input></p>
+      </div>
+      <br />
+      <div id="rentSales">
+      <label for='rentSales'> Ar Rentals or Sales Available?</label>
+      <p>
+      <input type="radio" name="rentals"
+      checked>Yes</input></p>
+      <p>
+      <input type="radio" name="rentals"
+      checked>No</input>
+      </p>
+      </div>
+      <br />
+      <div id="gunsmith">
+      <label for='gunsmith'>Gunsmith available at this location?</label>
+      <p>
+      <input type="radio" name="gunsmith"
+      checked>Yes</input></p>
+      <p>
+      <input type="radio" name="gunsmith"
+      checked>No</input>s
+      </p>
+      </div>
+      <br>
+      <label for='image'>Add an image</label>
+      <input
+        placeholder="url here"
+        type='text'
+        id='image'
+        name='imageURL'
+        value='{{range.imageURL}}'
         />
         <br />
         <input type='submit' value='Submit' href='/addReview/{{range._id}}' />

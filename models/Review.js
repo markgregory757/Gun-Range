@@ -6,23 +6,17 @@ const comment = require('./Comment')
 
 
 const reviewSchema = new Schema({
-  review: {
+  aReview: {
     type: String,
-    required: [true],
-    minLength: 50
+    required: [true, 'Cannot Submit Blank Review'],
+    minLength: 30
   },
-  reviewer: [{ 
-    type: Schema.Types.ObjectId, 
-    ref:'Person'
-  }],
-  range: [{ 
-    type: Schema.Types.ObjectId, 
-    ref:'Range'
-  }],
-  comments: [{ 
+  reviewer: String,
+  range: String,
+  comments: { 
     type: Schema.Types.ObjectId, 
     ref:'Comment'
-  }],
+  },
 })
 
 
