@@ -39,6 +39,18 @@ router.post('/', async (req, res) => {
   if (membersOnly == null) {
     membersOnly = 'Open to the Public'
   }
+  
+  if (trapSkeet == null) {
+    trapSkeet = "Not available"
+  }
+
+  if (rentSales == null) {
+    rentSales = "Not available"
+  }
+
+  if (gunsmith == null) {
+    gunsmith = "Not available"
+  }
   // console.log(name, membersOnly, address, city, state, zip, imageURL, lanes, review)
 
   if (ranges.includes(name)) {
