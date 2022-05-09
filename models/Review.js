@@ -9,7 +9,6 @@ const reviewSchema = new Schema({
   aReview: {
     type: String,
     required: [true, 'Cannot Submit Blank Review'],
-    minLength: 30
   },
   reviewer: String,
   range: String,

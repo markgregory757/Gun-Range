@@ -33,7 +33,7 @@ router.post("/", async (req, res) => {
   await newReview.save();
 
   const attachToRange = await Range.findOneAndUpdate(
-    { title: req.body.range},
+    {name: req.body.range},
     {$addToSet: {review: newReview}},
     {new: true}
     )
@@ -43,7 +43,11 @@ router.post("/", async (req, res) => {
       {$addToSet: {review: newReview}},
       {new: true}
       )
-  res.render('../views/index')
+
+
+      const people = await Person.find({})
+      const ranges = await Range.find({})
+  res.render('../views/index', {ranges, people})
 })
 
 module.exports = router

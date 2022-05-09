@@ -30,7 +30,7 @@ div{
   -ms-flex: 1;
   flex: 1;
   vertical-align: top;
- }  
+}  
 
 .range{
   display: inline-block;
@@ -57,6 +57,10 @@ div{
   background-color: rgba(173, 216, 230, 0.492);
   position:static;
   margin-bottom: 3px;
+}
+
+.review{
+  background-color: rgba(173, 216, 230, 0.492);
 }
 
 header {

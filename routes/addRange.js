@@ -9,6 +9,7 @@ const ranges = []
 const loginUser = require('../middleware/loginUser')
 const Person = require('../models/Person')
 
+/* GET page. */
 router.get('/', loginUser, async function (req, res) {
   res.render('addRange')
   rangeCheck = await Range.find({})
@@ -20,6 +21,7 @@ router.get('/', loginUser, async function (req, res) {
   // console.log("ranges: ",ranges)
 })
 
+/* POST new range. */
 router.post('/', async (req, res) => {
   let {
     name,
@@ -36,23 +38,29 @@ router.post('/', async (req, res) => {
     gunsmith,
   } = req.body
 
+
+// ADDING NULL VALUES
   if (membersOnly == null) {
     membersOnly = 'Open to the Public'
   }
-  
   if (trapSkeet == null) {
-    trapSkeet = "Not available"
+    trapSkeet = "Trap ahd Skeet not available"
   }
-
   if (rentSales == null) {
-    rentSales = "Not available"
+    rentSales = "Sales or rental equipment not available"
   }
-
   if (gunsmith == null) {
-    gunsmith = "Not available"
+    gunsmith = "No Gunsmith"
   }
-  // console.log(name, membersOnly, address, city, state, zip, imageURL, lanes, review)
+  if (outdoorLanes == null) {
+    outdoorLanes = "None"
+  }
+  if (indoorLanes == null) {
+    indoorLanes = "None"
+  }
 
+
+// CHECKING FOR PREEXISTING RANGE THEN SAVING
   if (ranges.includes(name)) {
     // console.log(ranges)
     res.send('Range already exists')
