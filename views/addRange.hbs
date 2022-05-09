@@ -76,38 +76,29 @@
         value='{{range.outdoor.number}}'
       />
       <br />
-      <div id="trap/skeet">
-      <label for='trapSkeet'>Is Trap / Skeet Available?</label>
-      <p><input type="radio" name="trap/skeet"
-      checked>Yes</input>
-      </p>
-      <p>
-      <input type="radio" name="trap/skeet"
-      checked>No</input></p>
-      </div>
-      <br />
-      <div id="rentSales">
-      <label for='rentSales'> Ar Rentals or Sales Available?</label>
-      <p>
-      <input type="radio" name="rentals"
-      checked>Yes</input></p>
-      <p>
-      <input type="radio" name="rentals"
-      checked>No</input>
-      </p>
-      </div>
-      <br />
-      <div id="gunsmith">
-      <label for='gunsmith'>Gunsmith available at this location?</label>
-      <p>
-      <input type="radio" name="gunsmith"
-      checked>Yes</input></p>
-      <p>
-      <input type="radio" name="gunsmith"
-      checked>No</input>s
-      </p>
-      </div>
-      <br>
+        <div id="trap/skeet">
+        <input
+          type='checkbox'
+          id='trapSkeet'
+          name='trapSkeet'
+          placeholder="Not available"
+          value=' Trap and Skeet avialable'
+        />
+        <label for='trapSkeet'> Trap / Skeet?</label>
+        </div>
+        <br />
+        <input
+          type='checkbox'
+          id='rentSales'
+          name='rentSales'
+          placeholder=" Not available"
+          value='Rent and Sales available'
+        />
+        <label for='rentSales'> Rental or Sales?</label>
+        <br />
+        <input type='checkbox' id='gunsmith' name='gunsmith' value='Gunsmith available on location.' />
+        <label for='gunsmith'> Gunsmith?</label>
+        <br />
       <label for='image'>Add an image</label>
       <input
         placeholder="url here"
