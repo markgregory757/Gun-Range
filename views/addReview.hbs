@@ -27,9 +27,9 @@
     <form action='/addReview' method='POST'>
       <input type="hidden" id="reviewer" name="reviewer" value="{{req.cookies.username}}">
       <input type="hidden" id="range" name="range" value="{{range.name}}">
-      <textarea name="newReview"
+      <textarea name="aReview"
         value="{{review.content}}"
-        id="newReview" 
+        id="aReview" 
         rows="4" 
         cols="75" 
         placeholder="Mostly Harmless"

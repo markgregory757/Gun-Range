@@ -7,7 +7,10 @@ const personSchema = new Schema({
     age: Number,
     imageURL: String,
     password: String,
-    about: String
+    about: String,
+    review: [{ 
+      type: Schema.Types.ObjectId, 
+      ref:'Review'}]
 });
 
 
