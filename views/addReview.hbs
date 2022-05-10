@@ -10,23 +10,18 @@
   <body>
 <!-- body -->
 <body>
-
-  <header>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/createUser">Register</a></li>
-      <li><a href="/addRange">New Range</a></li>
-      <li><a href="/blogs">Blogs</a></li>
-      <li><a href="/login">Login</a></li>
-      <li><a href="/logout">Logout</a></li>
-    </ul>
-  </header>
+  {{> header }}
+  
   <h1>Hello Review</h1><br>
   <div class="newReview">
     <p><label for="newReview">Add Review for: {{range.name}}</label>
     <form action='/addReview' method='POST'>
+{{!-- req.cookies not working within .hbs, adding values in associased .js --}}
       <input type="hidden" id="reviewer" name="reviewer" value="{{req.cookies.username}}">
+      <input type="hidden" id="reviewerId" name="reviewerId" value="{{req.cookies.userId}}">
       <input type="hidden" id="range" name="range" value="{{range.name}}">
+      <input type="hidden" id="rangeId" name="rangeId" value="{{range._id}}">
+
       <textarea name="aReview"
         value="{{review.content}}"
         id="aReview" 

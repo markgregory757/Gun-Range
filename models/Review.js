@@ -11,7 +11,9 @@ const reviewSchema = new Schema({
     required: [true, 'Cannot Submit Blank Review'],
   },
   reviewer: String,
+  reviewerId: String,
   range: String,
+  rangeId: String,
   comments: { 
     type: Schema.Types.ObjectId, 
     ref:'Comment'

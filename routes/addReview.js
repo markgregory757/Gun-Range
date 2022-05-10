@@ -20,16 +20,19 @@ router.get("/:id", loginUser, async (req, res) => {
 
 router.post("/", async (req, res) => {
   const id = req.params.id
-  let {aReview, reviewer, range} = req.body;
+  let {aReview, reviewer, reviewerId, range, rangeId} = req.body;
   reviewer = req.cookies.username
-  // console.log('req: ',req.body)
-
+  reviewerId = req.cookies.userId
+  console.log('req: ',req.body)
+  
   const newReview = new Review({
     aReview,
-    reviewer,    
-    range
+    reviewer, 
+    reviewerId,
+    range,
+    rangeId
   })
-  // console.log(newReview)
+  console.log(newReview)
   await newReview.save();
 
   const attachToRange = await Range.findOneAndUpdate(

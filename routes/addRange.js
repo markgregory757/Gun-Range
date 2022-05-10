@@ -44,10 +44,10 @@ router.post('/', async (req, res) => {
     membersOnly = 'Open to the Public'
   }
   if (trapSkeet == null) {
-    trapSkeet = "Trap ahd Skeet not available"
+    trapSkeet = "Trap ahd Skeet Unavailable"
   }
   if (rentSales == null) {
-    rentSales = "Sales or rental equipment not available"
+    rentSales = "Sales or Rental Unavailable"
   }
   if (gunsmith == null) {
     gunsmith = "No Gunsmith"

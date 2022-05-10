@@ -23,6 +23,7 @@ const loginRouter = require("./routes/login");
 const logoutRouter = require("./routes/logout")
 const rangeRouter = require("./routes/addRange");
 const detailsRouter = require("./routes/details");
+const personDetsRouter = require("./routes/personDetails");
 const blogRouter = require("./routes/blogs");
 const reviewRouter = require("./routes/addReview")
 const { appendFile } = require("fs");
@@ -64,6 +65,7 @@ app.use('/createUser', usersRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter)
 app.use('/details', detailsRouter);
+app.use('/personDetails', personDetsRouter)
 app.use('/addRange', rangeRouter);
 app.use('/addReview', reviewRouter);
 app.use('/blogs', blogRouter);
