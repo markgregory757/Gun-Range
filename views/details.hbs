@@ -12,30 +12,33 @@
 <body>
 {{> header }}
 
-  <div class="range-details">
-    <h1> Range and Details: <a class='btn' href='/addReview/{{range._id}}'>Add A Review</a></h1>
+    <div>
+      <h1> {{range.name}} Details and Reviews: </h1>
+    </div>
     
-    <h2>Name:   {{range.name}}</h2><br>
-    <a>{{range.membersOnly}}</a><br>
-    <a>Address:</br></a>    
-    <a>{{range.address}}</a><br>
-    <a>{{range.city}}, {{range.state}} {{range.zip}}</a><br>
-    <a>Indoor Lanes:    {{range.indoorLanes}}</a><br>
-    <a>Outdoor Lanes:   {{range.outdoorLanes}}</a><br>
-    <a>Trap and skeet: {{range.trapSkeet}}</a><br>
+<div class="range-details">
+    <div class="range-info">
+      <a>{{range.membersOnly}}</a><br>
+      <a>Address:</br></a>    
+      <a>{{range.address}}</a><br>
+      <a>{{range.city}}, {{range.state}} {{range.zip}}</a><br>
+      <a>Indoor Lanes:    {{range.indoorLanes}}</a><br>
+      <a>Outdoor Lanes:   {{range.outdoorLanes}}</a><br>
+      <a>Trap and skeet: {{range.trapSkeet}}</a><br>
     <a>Sales and rentals: {{range.rentSales}}</a><br>
     <a>Gunsmith available: {{range.gunsmith}}</a><br>
-    
-  </div>
+    </div>
+
   <div class="image-header">
     <a class="image-headerbtn" href="{{range.imageURL}}">Images</a>
     <br>
     <img src="{{range.imageURL}}">
   </div><br>
-
+</div>
 {{!-- populate current reviews --}}
   <div class="review" >
     <h4> Reviews: </h4>
+    <a class='btn' href='/addReview/{{range._id}}'>Add A Review</a>
     {{#each reviews}}
       {{> reviewDiv review=this}}
     {{/each}}
