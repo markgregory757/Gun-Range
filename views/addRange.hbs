@@ -74,35 +74,31 @@
         id='outdoorLanes'
         name='outdoorLanes'
         value='{{range.outdoor.number}}'
-      /><br>
-
-      <input
-        type='checkbox'
-        id='trapSkeet'
-        name='trapSkeet'
-        placeholder="Not available"
-        value=' Trap and Skeet avialable'
       />
-      <label for='trapSkeet'> Trap / Skeet?</label>
-      <br>
-      <input
-        type='checkbox'
-        id='rentSales'
-        name='rentSales'
-        placeholder=" Not available"
-        value='Rent and Sales available'
-      />
-      <label for='rentSales'> Rental or Sales?</label>
-      <br>
-      <input 
-        type='checkbox' 
-        id='gunsmith' 
-        name='gunsmith'
-        value='Gunsmith available on location.' 
-      />
-      <label for='gunsmith'> Gunsmith?</label>
-      <br>
-      
+      <br />
+        <div id="trap/skeet">
+        <input
+          type='checkbox'
+          id='trapSkeet'
+          name='trapSkeet'
+         
+          value={{range.trapSkeet}}
+        />
+        <label for='trapSkeet'> Trap / Skeet?</label>
+        </div>
+        <br />
+        <input
+          type='checkbox'
+          id='rentSales'
+          name='rentSales'
+        
+          value={{range.rentSales}}
+        />
+        <label for='rentSales'> Rental or Sales?</label>
+        <br />
+        <input type='checkbox' id='gunsmith' name='gunsmith' value='Gunsmith available on location.' />
+        <label for='gunsmith'> Gunsmith?</label>
+        <br />
       <label for='image'>Add an image</label>
       <input
         placeholder="url here"
