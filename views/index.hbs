@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <!-- header -->
-<head>
-  <link rel="icon" type="image/png" href="/public/images/favicon-16x16.png" sizes="16x16">
-  <link href="/style.css" type="text/css" rel="stylesheet">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<!-- body -->
-<body>
+  <head>
+    <link rel="icon" type="image/png" href="/public/images/favicon-16x16.png" sizes="16x16">
+    <link href="/style.css" type="text/css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <!-- body -->
+  <body>
 
- {{> header }}
+    {{> header }}
 
-  <h1>Arms and Safety</h1>
+    <h1>Arms and Safety</h1>
 
-{{!-- populate current people --}}
-  <div class="person">
-    <h4> Users: </h4>
-    {{#each people}}
-      {{> peopleDiv people=this}}
-    {{/each}}
-  </div>
+    {{!-- populate current ranges --}}
+    <div class="range" >
+      <h3> Ranges: </h3>
+      {{#each ranges}}
+        {{> rangeDiv ranges=this}}
+      {{/each}}
+    </div>
 
-
-{{!-- populate current ranges --}}
-  <div class="range" >
-    <h4> Ranges: </h4>
-    {{#each ranges}}
-      {{> rangeDiv ranges=this}}
-    {{/each}}
-  </div>
-
-
+    {{!-- populate current people --}}
+    <div class="person">
+      <h4> Users: </h4>
+      {{#each people}}
+        {{> peopleDiv people=this}}
+      {{/each}}
+    </div>
   </body>
-
 </html>
