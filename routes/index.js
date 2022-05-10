@@ -9,8 +9,12 @@ const Range  = require('../models/Range')
 router.get('/', async function (req, res, next) {
   const people = await Person.find({})
   const ranges = await Range.find({})
-  // console.log(ranges)
-  // console.log(people)
+/* pulling first picture for main page */
+  ranges.forEach(range => {
+    let firstPic = range.imageURL[0]
+    range.imageURL = firstPic
+    });
+    
   res.render('index', {ranges, people})
 });
 

@@ -14,7 +14,7 @@ router.get("/:id", async (req, res) => {
     const aRange = await Range.findById(id).populate('review')
       
     const theseReviews = await Review.find({range: aRange.name})
-    console.log(theseReviews)
+    console.log(aRange.imageURL[0])
 
     res.render('details', {title: "Details", range: aRange, reviews: theseReviews});
 });

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     
 
     <link href="/style.css" type="text/css" rel="stylesheet">
@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Details</title>
     
-</head> 
-<body>
-{{> header }}
+  </head> 
+  
+  <body>
+  {{> header }}
 
     <div>
       <h1> {{person.name}} Details and Reviews: </h1>
@@ -18,8 +19,8 @@
     
 <div class="range-details">
     <div class="range-info">
-      <a>Age: {{person.age}}</br></a>
-      <a>About: {{person.about}}</a><br>
+      <a>Age: {{person.age}}</br></a><br>
+      <a>About: <br> {{person.about}}</a><br>
     </div>
   <div class="image-header">
     <a class="image-headerbtn" href="{{person.imageURL}}">Images</a>
@@ -36,7 +37,6 @@
         <a href="/details/{{this.rangeId}}">
           {{this.range}}:<br></a>
         {{this.aReview}}
-        {{this.rangeId}}
       </div>
     {{/each}}
   </div>

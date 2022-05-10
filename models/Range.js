@@ -15,7 +15,7 @@ const rangeSchema = new Schema({
     required: [true, 'State Required!']
   },
   zip: Number,
-  imageURL: String,
+  imageURL: [],
   indoorLanes: Number,
   outdoorLanes: Number,
   trapSkeet: String,
