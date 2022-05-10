@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     
-
     <link href="/style.css" type="text/css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +9,11 @@
     
 </head> 
 <body>
-{{> header }}
+  {{> header }}
 
-    <div>
-      <h1> {{range.name}} Details and Reviews: </h1>
-    </div>
+  <div>
+    <h1> {{range.name}} Details and Reviews: </h1>
+  </div>
     
 <div class="range-details">
     <div class="range-info">
@@ -30,9 +29,13 @@
     </div>
 
   <div class="image-header">
-    <a class="image-headerbtn" href="{{range.imageURL}}">Images</a>
+    <a>Images</a>
     <br>
-    <img src="{{range.imageURL}}">
+    {{#each range.imageURL}}
+    <a href="{{this}}">
+    <img src="{{this}}">
+    </a><br>
+    {{/each}}
   </div><br>
 </div>
 {{!-- populate current reviews --}}
