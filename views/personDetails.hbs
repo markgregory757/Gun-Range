@@ -1,4 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
 
-<h1>UNDER CONSTRUCTION</h1>
-
+    <link href="/style.css" type="text/css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    
+</head> 
+<body>
 {{> header }}
+
+    <div>
+      <h1> {{person.name}} Details and Reviews: </h1>
+    </div>
+    
+<div class="range-details">
+    <div class="range-info">
+      <a>Age: {{person.age}}</br></a>
+      <a>About: {{person.about}}</a><br>
+    </div>
+  <div class="image-header">
+    <a class="image-headerbtn" href="{{person.imageURL}}">Images</a>
+    <br>
+    <img src="{{person.imageURL}}">
+  </div><br>
+</div>
+{{!-- populate current reviews --}}
+  <div class="review" >
+    <h4> Reviews Written by {{person.name}}: </h4>
+    {{#each reviews}}
+      {{!-- {{> reviewerDiv review=this}} --}}
+      <div class="review">
+        <a href="/details/{{this.rangeId}}">
+          {{this.range}}:<br></a>
+        {{this.aReview}}
+        {{this.rangeId}}
+      </div>
+    {{/each}}
+  </div>
+
+</body>
+</html>

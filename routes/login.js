@@ -9,23 +9,26 @@ const secretKey = process.env.SECRET;
 
 router.get("/", async (req, res) => {
         res.render("login", {title: "Welcome Back" });
-        console.log("login reached")
+        // console.log("login reached")
       });
 
       router.post("/", async (req, res, next) => {
         const {username, password} = req.body
-        console.log('req.body is: ', req.body, 'and name, password is: ', username, password)
+        // console.log('req.body is: ', req.body, 'and name, password is: ', username, password)
         const person = await Person.findOne({ name: username});
         const match = await bcrypt.compare(password, person.password)
       
-        console.log(match)
+        // console.log(match)
       
         if (match) {
           const payload = {id: person._id, name: username}
           const token = jwt.sign(payload, secretKey)
           res.cookie("accessToken", token);
-          res.cookie("username", username)
-          console.log("access cookie", username)
+          res.cookie("username", username);
+          let userId = person._id;
+          userId = userId.toString()
+          res.cookie("userId", userId)
+          // console.log("access cookie", username)
       
           res.redirect("/")
         } else  {
