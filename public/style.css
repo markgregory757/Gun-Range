@@ -60,6 +60,9 @@ div{
 }
 
 .review{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin: 5px !important;
   background-color: rgba(173, 216, 230, 0.492);
 }
 
