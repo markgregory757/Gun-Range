@@ -132,8 +132,9 @@ color: white;
 }
 
 .addPic{
+  background-color: rgba(173, 216, 230, 0);
   /* font-style: normal !important; */
-  font-size: small !important;
+  /* font-size: small !important; */
 }
 
 .remember input
@@ -191,7 +192,7 @@ nav {
   -ms-flex: 1;
   flex: 1;
   font-size: 28px;
-  color:rgb(19, 16, 243);
+  color:rgb(19, 16, 243) !important;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding-left: 3%;
   

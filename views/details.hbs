@@ -36,8 +36,16 @@
     <img src="{{this}}">
     </a><br>
     {{/each}}
-      <a class="addPic" href="/addImage/{{ranges._id}}">Add Your Picture</a>
-
+    <form class="addPic" action='/details' method='POST'>
+      <label for='addPic'>Add an image</label>
+      <input
+        placeholder="url here"
+        type='text'
+        id='addPic'
+        name='addPic'
+        value='{{range.newPic}}'
+        /><input type='submit' value='Submit' href='/details/{{range._id}}' />
+      </form>
   </div><br>
 </div>
 {{!-- populate current reviews --}}

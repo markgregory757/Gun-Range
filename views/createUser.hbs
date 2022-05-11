@@ -20,6 +20,9 @@
       <label for="password">Password:</label>
       <input type="password" id="pasword" name="password">
       <br>
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" value="{{person.location}}"></input>
+      <br>
       <p>
       <label for="about">Talk about yourself</label>
       <textarea id="about" name="about" value="{{person.about}}"></textarea>
@@ -27,7 +30,6 @@
       <br>
     <label for="imageURL">Profile Image:</label>
       <input placeholder="paste image here" type="text" id="imageURL" name="imageURL" value="{{person.imageURL}}">
-      
       <input type="submit" value="Register">
       </form>
       <img alt="Preview" id="imagePReview">

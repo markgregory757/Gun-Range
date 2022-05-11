@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
 
 // console.log(req.body);
-  const { name, password, imageURL, about } = req.body;
+  const { name, password, location, imageURL, about } = req.body;
 // console.log(name, password, age, image, abilities);
 
 //If no password check
@@ -46,6 +46,7 @@ router.post("/", async (req, res) => {
     const newUser = new Person({
       name,
       password: hash,
+      location,
       imageURL,
       about,
     });
