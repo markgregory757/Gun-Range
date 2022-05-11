@@ -10,6 +10,3 @@ You can browse the different ranges and see pictures that other people post. Cre
 
 This project was completed by:
 Mark Gomez and David Scott
-
-Using:
-Javascript, ExpressJS, HTML, Handlebars, MongoDB and Mongoose
