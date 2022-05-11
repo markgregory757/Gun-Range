@@ -47,7 +47,7 @@ div{
   text-indent: 15px;
   -webkit-flex: 1;
   -ms-flex: 1;
-  flex: 1;
+  flex: 1
 }
 
 .person{
@@ -129,6 +129,11 @@ box-shadow: 0 0 0 0 !important;
 
 .remember{
 color: white;
+}
+
+.addPic{
+  /* font-style: normal !important; */
+  font-size: small !important;
 }
 
 .remember input
