@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
   let {addPic} = req.body
   console.log("new image is: ",addPic)
   const attachToRange = await Range.findOneAndUpdate(
-    {_id: req.body.id},
+    {_id: id},
     {$addToSet: {imageURL: addPic}},
     {new: true}
     )
