@@ -41,15 +41,21 @@ router.post("/", async (req, res) => {
     {new: true}
     )
 
-    const attachToUser =await Person.findOneAndUpdate(
-      {name: req.cookies.username},
-      {$addToSet: {review: newReview}},
-      {new: true}
-      )
+  const attachToUser =await Person.findOneAndUpdate(
+    {name: req.cookies.username},
+    {$addToSet: {review: newReview}},
+    {new: true}
+  )
 
 
-      const people = await Person.find({})
-      const ranges = await Range.find({})
+  const people = await Person.find({})
+  const ranges = await Range.find({})
+  /* pulling first picture for main page */
+  ranges.forEach(range => {
+    let firstPic = range.imageURL[0]
+    range.imageURL = firstPic
+  });
+
   res.render('../views/index', {ranges, people})
 })
 
