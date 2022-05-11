@@ -7,3 +7,9 @@ You can create a user profile, add new gun ranges to the database, and post revi
 
 You can browse the different ranges and see pictures that other people post. Creating a profile unlocks the details page where you can see more information about the ranges. You can also share your experiences by posting a review after adding a new range to the list or post to an existing one.
 
+
+This project was completed by:
+Mark Gomez and David Scott
+
+Using:
+Javascript, ExpressJS, HTML, Handlebars, MongoDB and Mongoose
